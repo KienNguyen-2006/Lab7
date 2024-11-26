@@ -1,0 +1,245 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "navbar words image-container"
+        "footer footer footer";
+    grid-template-columns: 1fr 3.5fr 1.5fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header {
+    grid-area: header;
+    background-color: #889fc9;
+    color: white;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-areas: 
+        "logo title title";
+    grid-template-columns: auto auto;
+    
+}
+
+.logo {
+    grid-area: logo;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.title {
+    grid-area: title; 
+    font-size: 2.5em;
+    color: black;
+    align-self: center;
+    
+}
+
+
+
+.navbar {
+    grid-area: navbar;
+    background-color: #b3c7e6;
+    color: white;
+}
+
+.navbar nav li {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: pink;
+    border-bottom: solid #ffffff;
+    list-style: none;
+    text-decoration: none;
+    padding: 25px;
+}
+
+.navbar  nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: #ffffff
+}
+
+.word-area {
+    grid-area: words;
+    background-color: #ffffff;
+    color: white;
+}
+
+.image-container {
+    grid-area: image-container;
+    background-color: #ffffff;
+    color: white;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #889fc9;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.word-area h1{
+    padding: 15px;
+    padding-right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7696c7
+}
+
+.word-area p{
+    padding: 15px;
+    padding-right: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: black
+}
+
+.last{
+    padding-bottom: 25px;
+}
+
+.footer p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: small;
+}
+
+.image-container img{
+    padding-top: 15px;
+    padding-left: 15px;
+    width: 90%;          
+    height: 80%;    
+    object-fit: cover;     
+}
+
+
+@media screen and (min-width:481px) and (max-width:805px){
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "navbar navbar"
+            "words image-container"
+            "footer footer";
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        background-color: #b3c7e6;
+        color: white;
+        padding: 10px 0; 
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar nav ul {
+        display: flex;
+    }
+
+    .navbar nav ul li {
+        border: none;
+        margin: 10px;
+    }
+
+    .title{
+        font-size: 1.2em;
+    }
+
+    .image-container img{
+        width: 90%;
+        height: 70%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:480px){
+    .container{
+        display: grid;
+        grid-template-areas: 
+            "header"
+            "navbar"
+            "words";
+        grid-template-columns: auto;
+        grid-template-rows: 0.5fr 1fr 2fr;
+    }
+
+    .header {
+        grid-area: header;
+        background-color: #889fc9;
+        color: white;
+        display: grid;
+        grid-template-areas: 
+            "title title logo";
+        grid-template-columns: 2fr 1fr;
+        position: relative;
+    }
+    
+    .logo {
+        grid-area: logo;
+        transform: rotateY(180deg);
+        position: relative;
+        z-index: 1; 
+    }
+    
+    .title {
+        grid-area: title;
+        font-size: 1.2em; 
+        color: blue;
+        position: relative; 
+        z-index: 2; 
+        margin-right: -80%; 
+
+    }
+    
+    .navbar ul li{
+        background-color: #b3c7e6;
+    }
+
+    .word-area h1{
+        margin: 0;
+        margin-top: 5px;
+        padding-left: 10px;
+        
+   }
+   .word-area p{
+        margin: 0;
+        padding: 0px 10px;
+    }
+
+    .hide{
+        display: none;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    .image-container{
+        display: none;
+    }
+
+
+
+}
